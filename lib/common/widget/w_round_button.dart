@@ -1,5 +1,5 @@
-import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/common/widget/round_button_theme.dart';
+import 'package:flutter_toss_clone/common/common.dart';
+import 'package:flutter_toss_clone/common/widget/round_button_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'mixin/wm_refresh_every_second.dart';
