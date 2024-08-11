@@ -18,45 +18,48 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          backgroundColor: context.appColors.roundedLayoutBackground,
-          pinned: true,
-          actions: [
-            ImageButton(
-              imagePath: '$basePath/icon/stock_search.png',
-              onTap: () {
-                context.showSnackbar("검색");
-              },
-            ),
-            ImageButton(
-              imagePath: '$basePath/icon/stock_calendar.png',
-              onTap: () {
-                context.showSnackbar("캘린더");
-              },
-            ),
-            ImageButton(
-              imagePath: '$basePath/icon/stock_settings.png',
-              onTap: () {
-                context.showSnackbar("셋팅");
-              },
-            ),
-          ],
-        ),
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              title,
-              tabBar,
-              if(currentIndex == 0)
-                MyStockFragment()
-              else
-                TodaysDiscoveryFragment(),
+    return Container(
+      color: context.backgroundColor,
+      child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: context.appColors.roundedLayoutBackground,
+            pinned: true,
+            actions: [
+              ImageButton(
+                imagePath: '$basePath/icon/stock_search.png',
+                onTap: () {
+                  context.showSnackbar("검색");
+                },
+              ),
+              ImageButton(
+                imagePath: '$basePath/icon/stock_calendar.png',
+                onTap: () {
+                  context.showSnackbar("캘린더");
+                },
+              ),
+              ImageButton(
+                imagePath: '$basePath/icon/stock_settings.png',
+                onTap: () {
+                  context.showSnackbar("셋팅");
+                },
+              ),
             ],
           ),
-        )
-      ],
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                title,
+                tabBar,
+                if(currentIndex == 0)
+                  MyStockFragment()
+                else
+                  TodaysDiscoveryFragment(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
