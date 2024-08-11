@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_toss_clone/screen/main/tab/stock/search/search_stock_data.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/search/stock_search_data.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/search/w_popular_search_stock_list.dart';
-import 'package:flutter_toss_clone/screen/main/tab/stock/search/w_search_hisotry_list.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/search/w_search_auto_complete_list.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/search/w_search_history_stock_list.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/search/w_stock_search_app_bar.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SearchStockScreen extends StatefulWidget {
   const SearchStockScreen({super.key});
@@ -13,16 +13,17 @@ class SearchStockScreen extends StatefulWidget {
   State<SearchStockScreen> createState() => _SearchStockScreenState();
 }
 
-class _SearchStockScreenState extends State<SearchStockScreen> {
+class _SearchStockScreenState extends State<SearchStockScreen> with SearchStockDataProvider{
   final controller = TextEditingController();
-
 
   @override
   void initState() {
     Get.put(SearchStockData());
+    controller.addListener(() {
+      searchData.search(controller.text);
+    });
     super.initState();
   }
-
 
   @override
   void dispose() {
@@ -36,11 +37,15 @@ class _SearchStockScreenState extends State<SearchStockScreen> {
       appBar: StockSearchAppBar(
         controller: controller,
       ),
-      body: ListView(
-        children: [
-          SearchHistoryList(),
-          PopularSearchStockList(),
-        ],
+      body: Obx(
+        () => searchData.autoCompleteList.isEmpty
+            ? ListView(
+                children: const [
+                  SearchHistoryStockList(),
+                  PopularSearchStockList(),
+                ],
+              )
+            : SearchAutoCompleteList(controller: controller,),
       ),
     );
   }
