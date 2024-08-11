@@ -5,6 +5,7 @@ import 'package:flutter_toss_clone/common/constants.dart';
 import 'package:flutter_toss_clone/common/dart/extension/context_extension.dart';
 
 import '../../../../common/widget/w_height_and_width.dart';
+import '../../../notification/s_notification.dart';
 
 class TossAppBar extends StatefulWidget {
   static const double appBarHeight = 60;
@@ -15,7 +16,7 @@ class TossAppBar extends StatefulWidget {
 }
 
 class _TossAppBarState extends State<TossAppBar> {
-  bool _showRedDot = false;
+  bool _showRedDot = true;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,7 @@ class _TossAppBarState extends State<TossAppBar> {
           width10,
           Tap(
             onTap: () {
-              setState(() {
-                _showRedDot = !_showRedDot;
-              });
+              Nav.push(NotificationScreen());
             },
             child: Stack(
               children: [
