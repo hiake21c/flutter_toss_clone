@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toss_clone/common/common.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/search/f_search_stack.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_my_stock.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_today_discovery.dart';
 
@@ -29,7 +30,7 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
               ImageButton(
                 imagePath: '$basePath/icon/stock_search.png',
                 onTap: () {
-                  context.showSnackbar("검색");
+                  Nav.push(SearchStockFragment());
                 },
               ),
               ImageButton(
@@ -50,6 +51,7 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
             child: Column(
               children: [
                 title,
+                height10,
                 tabBar,
                 if(currentIndex == 0)
                   MyStockFragment()
@@ -71,6 +73,7 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
         '토스증권'.text.size(24).bold.make(),
         width20,
         'S&P 500'.text.size(13).bold.color(context.appColors.lessImportant).make(),
+        width10,
         3919.29.toComma().text.size(13).bold.color(context.appColors.plus).make(),
       ],
     ).pOnly(left: 20),
