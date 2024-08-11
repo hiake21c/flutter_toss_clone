@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toss_clone/common/common.dart';
-import 'package:flutter_toss_clone/screen/main/tab/stock/search/f_search_stack.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/search/s_search_stack.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_my_stock.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_today_discovery.dart';
 
@@ -30,7 +30,7 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
               ImageButton(
                 imagePath: '$basePath/icon/stock_search.png',
                 onTap: () {
-                  Nav.push(SearchStockFragment());
+                  Nav.push(SearchStockScreen());
                 },
               ),
               ImageButton(
@@ -54,9 +54,9 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
                 height10,
                 tabBar,
                 if(currentIndex == 0)
-                  MyStockFragment()
+                  const MyStockFragment()
                 else
-                  TodaysDiscoveryFragment(),
+                  const TodaysDiscoveryFragment(),
               ],
             ),
           )
