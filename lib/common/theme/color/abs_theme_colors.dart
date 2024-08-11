@@ -57,4 +57,8 @@ abstract class AbstractThemeColors {
   Color? get lessImportant => AppColors.grey;
 
   Color? get blueText => AppColors.blue;
+
+  Color? get plus => const Color.fromARGB(255, 230, 71, 83);
+
+  Color get roundedLayoutBackground => const Color.fromARGB(255, 24, 24, 24);
 }
