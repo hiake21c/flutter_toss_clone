@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toss_clone/common/common.dart';
+import 'package:flutter_toss_clone/screen/main/tab/stock/setting/s_setting.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/search/s_search_stack.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_my_stock.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/tab/f_today_discovery.dart';
@@ -42,7 +43,7 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
               ImageButton(
                 imagePath: '$basePath/icon/stock_settings.png',
                 onTap: () {
-                  context.showSnackbar("셋팅");
+                  Nav.push(SettingScreen());
                 },
               ),
             ],
