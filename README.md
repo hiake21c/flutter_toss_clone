@@ -1,16 +1,30 @@
-# flutter_toss_clone
+# Flutter Toss App Clone Project
 
-A new Flutter project.
+This is a flutter project that clones the TOSS app.
 
-## Getting Started
+## What implemented
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Main 
+![toss_main.png](github_images/toss_main.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Benefit
+![toss_benefit.png](github_images/toss_benefit.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Notification
+![toss_notification.png](github_images/toss_notification.png)
+
+### Search
+![toss_search.png](github_images/toss_search.png)
+
+### Auto Complete
+![toss_autocomplete.png](github_images/toss_autocomplete.png)
+
+### Stock
+![toss_stock.png](github_images/toss_stock.png)
+
+### Setting
+![toss_setting.png](github_images/toss_setting.png)
+
+### Open Source License
+![toss_open_source.png](github_images/toss_open_source.png)
