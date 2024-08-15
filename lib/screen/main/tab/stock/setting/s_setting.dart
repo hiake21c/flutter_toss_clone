@@ -4,6 +4,7 @@ import 'package:flutter_toss_clone/common/common.dart';
 import 'package:flutter_toss_clone/common/dart/extension/datetime_extension.dart';
 import 'package:flutter_toss_clone/common/data/preference/app_preferences.dart';
 import 'package:flutter_toss_clone/screen/main/tab/stock/setting/w_switch_menu.dart';
+import 'package:flutter_toss_clone/screen/opensource/s_opensource.dart';
 
 import '../../../../../common/data/preference/prefs.dart';
 import '../../../../../common/widget/w_big_button.dart';
@@ -79,7 +80,10 @@ class _SettingScreenState extends State<SettingScreen> {
                     Prefs.number.set(number);
                   }
                 }),
-          )
+          ),
+          BigButton("Open source", onTap: (){
+            Nav.push(OpensourceScreen());
+          })
         ],
       ),
     );
